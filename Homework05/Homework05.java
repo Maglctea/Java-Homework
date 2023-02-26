@@ -3,20 +3,19 @@ package Homework05;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.Array;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Homework05 {
 
     static int countLines(String path) throws IOException {
         FileReader fileReader = new FileReader(path);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
-        int count = 0;
-        while (bufferedReader.readLine() != null) {
-            count++;
+        try (BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+            int count = 0;
+            while (bufferedReader.readLine() != null) {
+                count++;
+            }
+            return count;
         }
-        return count;
     }
 
     static int countElements(String path) throws IOException {
