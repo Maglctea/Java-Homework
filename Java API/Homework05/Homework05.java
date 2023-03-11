@@ -1,13 +1,14 @@
-package Homework05;
-
 import java.io.IOException;
 import java.util.Scanner;
+
+
+
 
 
 public class Homework05 {
 
     public static void main(String[] args) throws IOException {
-        String path = "Homework05/map.txt";
+        String path = "map.txt";
         int[][] map = Map.downLoadMap(path);
 
         Map.printMap(map);
