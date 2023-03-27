@@ -1,3 +1,5 @@
+// создай класс как в этом коде, но на Python
+
 package models;
 
 import java.util.ArrayList;
