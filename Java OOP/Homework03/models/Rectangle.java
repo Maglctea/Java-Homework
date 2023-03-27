@@ -1,56 +1,29 @@
-package models;
+package homeworks.hw3.Models;
 
-import java.util.Scanner;
+public class Rectangle extends Figure {
 
-public class Rectangle extends BaseFigure {
-    double a;
-    double b;
+    private double length;
+    private double width;
 
-    public Rectangle(double a, double b) {
-        this.a = a;
-        this.b = b;
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
     }
 
-    public Rectangle() {
-        
+    public double getPerimeter() {
+        return 2 * (length + width);
     }
 
-    @Override
-    public double Perimeter() {
-        return 2 * (a + b);
-    }
-    @Override
-    public double Area() {
-        return a * b;
+    public double getArea() {
+        return length * width;
     }
 
-    @Override
-    public void PrintInfo() {
-        System.out.println(String.format("a: %.2f", this.a));
-        System.out.println(String.format("b: %.2f", this.b));
-        super.PrintInfo();
-
+    public double getLength() {
+        return length;
     }
 
-    @Override
-    public Rectangle CreateView() throws FigureException {
-        Scanner in = new Scanner(System.in);
-        
-        System.out.print("a: ");
-        a = Double.parseDouble(in.nextLine());
-        System.out.print("b: ");
-        b = Double.parseDouble(in.nextLine());
-
-        return new Rectangle(a, b);
+    public double getWidth() {
+        return width;
     }
 
-    @Override
-    public void EditView() {
-        Scanner in = new Scanner(System.in);  
-
-        System.out.print("a: ");
-        this.a = Double.parseDouble(in.nextLine());
-        System.out.print("b: ");
-        this.b = Double.parseDouble(in.nextLine());
-    }
 }

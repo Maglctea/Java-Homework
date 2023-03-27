@@ -1,51 +1,23 @@
-package models;
+package homeworks.hw3.Models;
 
-import java.util.Scanner;
+public class Square extends Figure {
 
-public class Square extends BaseFigure {
+    private double side;
 
-    double a;
-
-    public Square(double a) {
-        this.a = a;
+    public Square(double side) {
+        this.side = side;
     }
 
-    public Square() {}
-
-    @Override
-    public double Perimeter() {
-        return a * 4;
+    public double getPerimeter() {
+        return 4 * side;
     }
 
-    @Override
-    public double Area() {
-        return a * a;
+    public double getArea() {
+        return side * side;
     }
 
-    @Override
-    public void PrintInfo() {
-        System.out.println(String.format("c: %.2f", this.a));        
-        super.PrintInfo();   
-    }
-    
-    @Override
-    public Square CreateView() throws FigureException {
-        
-        Scanner in = new Scanner(System.in);
-        
-        System.out.print("a: ");
-        a = Double.parseDouble(in.nextLine());
-        
-        return new Square(a);
+    public double getSide() {
+        return side;
     }
 
-    @Override
-    public void EditView() {
-        
-        Scanner in = new Scanner(System.in);
-        
-        System.out.print("a: ");
-        this.a = Double.parseDouble(in.nextLine());
-    
-    }
 }

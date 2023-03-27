@@ -1,9 +1,9 @@
-package models;
+package homeworks.hw3.Models;
 
-public interface Figure {
-    double Perimeter();
-    double Area();
-    void PrintInfo();
-    BaseFigure CreateView() throws FigureException;
-    void EditView() throws FigureException;
-    }
+public abstract class Figure {
+
+    public abstract double getPerimeter();
+
+    public abstract double getArea();
+
+}

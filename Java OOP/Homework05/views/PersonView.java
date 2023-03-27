@@ -5,11 +5,6 @@ import java.util.Scanner;
 import models.Person;
 
 public class PersonView {
-    public int age;
-    public String surname;
-    public String name;
-    public String patronymic;
-    public String telephone;
 
     public int getMenuItem() {
         System.out.println("1). Информация сотруднике");

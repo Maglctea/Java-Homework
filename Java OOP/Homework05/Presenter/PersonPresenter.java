@@ -1,4 +1,4 @@
-package Presentor;
+package Presenter;
 
 import models.Designer;
 import models.Person;
@@ -7,11 +7,11 @@ import views.DesignerView;
 import views.PersonView;
 import views.ProgrammerView;
 
-public class PersonPresentor {
+public class PersonPresenter {
 
     Person person;
 
-    public PersonPresentor(Person person) {
+    public PersonPresenter(Person person) {
         this.person = person;
     }
 

@@ -1,4 +1,4 @@
-package Presentor;
+package Presenter;
 
 import java.util.ArrayList;
 
@@ -37,7 +37,7 @@ public class DeportamentPresenter {
 
                 case 3: // В работника
                     index = departamentView.getIndex();
-                    PersonPresentor personPresentor = new PersonPresentor(department.getEmployees(index + 1));
+                    PersonPresenter personPresentor = new PersonPresenter(department.getEmployees(index + 1));
                     personPresentor.MenuControl();
                     break;
 

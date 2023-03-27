@@ -1,45 +1,23 @@
-package models;
+package homeworks.hw3.Models;
 
-import java.util.Scanner;
+public class Circle extends Figure {
 
-public class Circle extends BaseFigure {
-    double radius;
+    private double radius;
 
-    @Override
-    public double Perimeter() {
-        return 2 * Math.PI * this.radius;
+    public Circle(double radius) {
+        this.radius = radius;
     }
 
-    @Override
-    public double Area() {
-        return 2 * Math.PI * Math.pow(this.radius, 2);
+    public double getPerimeter() {
+        return 2 * Math.PI * radius;
     }
 
-    @Override
-    public void PrintInfo() {       
-        System.out.println(String.format("Радиус: %.2f", this.radius)); 
-        
-        super.PrintInfo();        
+    public double getArea() {
+        return Math.PI * radius * radius;
     }
 
-    @Override
-    public Circle CreateView() {
-        Scanner in = new Scanner(System.in);
-        
-        System.out.print("Радиус круга: ");
-        this.radius = Double.parseDouble(in.nextLine());
-
-        return this;
+    public double getRadius() {
+        return radius;
     }
-
-    @Override
-    public void EditView() {
-        Scanner in = new Scanner(System.in);
-        
-        System.out.print("Радиус круга: ");
-        this.radius = Double.parseDouble(in.nextLine());
-    }   
-
-    
 
 }

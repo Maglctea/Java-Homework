@@ -17,7 +17,7 @@ public class Company {
         return this.departments.get(index);
     }
 
-    public void removetDepartment(int index) {
+    public void remove(int index) {
         departments.remove(index);
     }
 }

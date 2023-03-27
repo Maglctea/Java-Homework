@@ -28,12 +28,12 @@ public class CompanyView {
 
     public void printInfo(Company company, int index) {
         // System.out.println("++++++++++++++++++++++++++++++++++++");
-        System.out.println(String.format("Отдел \"%s\"", company.getDepartment().get(index).getName()));
+        System.out.println(String.format("Отдел \"%s\"", company.getDepartments().get(index).getName()));
     }
 
     public void printInfo(Company company) {
         // System.out.println("++++++++++++++++++++++++++++++++++++");
-        for (Department department : company.getDepartment()) {
+        for (Department department : company.getDepartments()) {
             // System.out.println("++++++++++++++++++++++++++++++++++++");
             System.out.println(String.format("Отдел \"%s\"", department.getName()));
         }

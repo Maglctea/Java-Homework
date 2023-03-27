@@ -1,4 +1,4 @@
-package Presentor;
+package Presenter;
 
 import models.Company;
 import models.Department;

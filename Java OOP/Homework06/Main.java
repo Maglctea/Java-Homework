@@ -1,7 +1,10 @@
-import Presenter.CompanyPresenter;
+import java.util.Scanner;
+
 import models.Company;
 import models.Department;
 import models.Programmer;
+import presenters.CompanyPresenter;
+import views.View;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,8 +24,12 @@ public class Main {
         company.add(department2);
 
 
-        CompanyPresenter companyPresenter = new CompanyPresenter(company);
-        companyPresenter.MenuControl();
-   
+        
+        Scanner scanner = new Scanner(System.in, "CP866");
+        View view = new View(scanner);
+
+        CompanyPresenter companyPresenter = new CompanyPresenter(company, view);
+        companyPresenter.menuControl();
+        
     }
 }

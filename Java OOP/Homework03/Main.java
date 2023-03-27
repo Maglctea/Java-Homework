@@ -1,71 +1,31 @@
+package homeworks.hw3;
+
 import java.util.Scanner;
 
-import models.FigureException;
-import models.FiguresControl;
+import homeworks.hw3.Models.Circle;
+import homeworks.hw3.Models.FigureCollection;
+import homeworks.hw3.Models.Rectangle;
+import homeworks.hw3.Models.Square;
+import homeworks.hw3.Models.Triangle;
+import homeworks.hw3.Presenters.Menu;
+import homeworks.hw3.Presenters.Presenter;
+import homeworks.hw3.Views.View;
 
 public class Main {
 
-    public static void main(String[] args) throws FigureException {      
-        FiguresControl figuresControl = new FiguresControl();
+    public static void main(String[] args) {
+        View view = new View(new Scanner(System.in));
+        FigureCollection collection = new FigureCollection();
+        Presenter presenter = new Presenter(view, collection);
+        collection.addFigure(new Triangle(3, 2, 3));
+        collection.addFigure(new Square(5));
+        collection.addFigure(new Rectangle(2, 3));
+        collection.addFigure(new Circle(5));
+        Menu menu = new Menu(presenter, view);
+        menu.start();
 
-        Scanner in = new Scanner(System.in);
-        String menuString = "1). Добавить фигуру.\n2). Убрать фигуру\n3). Посмотреть информацию о фигуре\n4). Информация о всех фигурах\n5). Изменить фигуру.\n6). Отсортировать фигуры.\n0 - Выход.\n>>> ";
-         
+        // collection.printAllFigures();
 
-        System.out.print(menuString);
-        int res = Integer.parseInt(in.nextLine());
-        while (res != 0) {
-
-            switch (res) {
-                case 1:
-                    figuresControl.Add();
-                    break;                
-                    
-                case 2:
-                    System.out.print("Введите номер фигуры\n>>> ");
-                    res = Integer.parseInt(in.nextLine());
-                    try {
-                        figuresControl.Remove(res - 1);                        
-                    } catch (Exception e) {
-                        System.out.println("Фигура не обнаружена");
-                    }
-                    break;
-
-                case 3:                    
-                    System.out.print("Введите номер фигуры\n>>> ");
-                    res = Integer.parseInt(in.nextLine());
-                    try {
-                        figuresControl.GetInfo(res - 1);                        
-                    } catch (Exception e) {
-                        System.out.println("Фигура не обнаружена");
-                    }
-                    break;
-        
-                case 4:
-                    figuresControl.GetInfo();
-                    break;
-
-                case 5:
-                    System.out.print("Введите номер фигуры\n>>> ");
-                    res = Integer.parseInt(in.nextLine());
-                    try {
-                        figuresControl.Edit(res - 1);                        
-                    } catch (Exception e) {
-                        System.out.println("Фигура не обнаружена");
-                    }
-                    break;
-                
-                case 6:
-                    figuresControl.Sort();
-                    break;
-
-                default:                
-                    System.out.println("Ошибка ввода");
-                    break;
-            }
-            
-            System.out.print(menuString);
-            res = Integer.parseInt(in.nextLine());
-        }
     }
+
 }
